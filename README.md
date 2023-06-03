@@ -8,7 +8,8 @@ This project is currently in development. New features and improvements are expe
 
 ## Preview
 
-To be added soon!
+![blog-app-preview-1](https://github.com/OliverMorla/blog-app/assets/73266650/7e73961a-68cc-45f4-af1d-25891429cf23)
+More to be added soon!
 
 ## Technologies Used
 
