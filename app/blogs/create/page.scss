@@ -1,0 +1,38 @@
+.container {
+    margin: 4rem;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    .editor-w {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .create-title-input {
+            height: 50px;
+            font-size: 30px;
+            padding: 1rem;
+        }
+
+        .editor {
+            height: 300px;
+        }
+
+    }
+
+    .sidebar-w {
+        .status {}
+
+        .visibility {}
+
+        .btn-w {
+            display: flex;
+            flex-direction: column;
+
+            .draft {}
+
+            .create {}
+        }
+    }
+}

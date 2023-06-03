@@ -1,0 +1,77 @@
+.footer-w {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    background-color: #28282B;
+
+    .section-one {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        width: 100%;
+
+        .about-us-w {
+            max-width: 200px;
+
+            .heading {}
+
+            .info {
+                font-size: 12px;
+            }
+        }
+
+        .features-w {
+            .features-list-w {
+                .feature-item {
+                    font-size: 12px
+                }
+            }
+        }
+
+        .contact-us-w {
+            .heading {}
+
+            .icon-w {
+                .icon {
+                    width: 12px;
+                }
+            }
+
+            .info-w {
+                h3 {}
+
+                address {
+                    font-size: 12px;
+                }
+
+            }
+        }
+
+        .newsletter-w {
+            .heading {}
+
+            form {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                input[type=text] {
+                    padding: 1rem;
+                }
+
+                .sub-btn {
+                    background-color: #56565f;
+                    border: none;
+                    appearance: none;
+                    padding: 1rem
+                }
+            }
+        }
+    }
+
+    .section-two {
+        .copyright-w {}
+    }
+}
