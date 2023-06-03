@@ -6,6 +6,10 @@ Blog-App is a comprehensive, full-stack web application designed to provide a pl
 
 This project is currently in development. New features and improvements are expected to be added soon. Please stay tuned for updates!
 
+## Preview
+
+Will be added soon.
+
 ## Technologies Used
 
 - Next.js 13
