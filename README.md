@@ -16,6 +16,7 @@ More to be added soon!
 - Next.js 13
 - React.js
 - Node.js
+- Typewriter.js
 - Context API
 - HTML
 - SCSS
