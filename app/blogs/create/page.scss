@@ -1,0 +1,62 @@
+.container {
+    margin: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-grow: 1;
+
+    .editor-w {
+        display: flex;
+        flex-direction: column;
+        width: 750px;
+        height: 300px;
+        gap: 10px;
+
+        .create-title-input {
+            height: 50px;
+            font-size: 30px;
+            padding: 1rem;
+        }
+    }
+
+    .sidebar-w {
+        display: flex;
+        flex-direction: column;
+
+        .status {}
+
+        .visibility {}
+
+        .btn-w {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            #draft {
+                cursor: pointer;
+                appearance: none;
+                border: none;
+                color: white;
+                padding: 2em 1em;
+                background-color: #28282B;
+
+                &:hover {
+                    background-color: #424247;
+                }
+            }
+
+            #create {
+                cursor: pointer;
+                appearance: none;
+                border: none;
+                color: white;
+                padding: 2em 1em;
+                background-color: #28282B;
+
+                &:hover {
+                    background-color: #424247;
+                }
+            }
+        }
+    }
+}

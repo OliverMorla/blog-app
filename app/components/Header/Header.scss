@@ -1,0 +1,77 @@
+.header-w {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #28282B;
+    padding: 1rem 2rem;
+    color: white;
+
+    .brand-title {
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 10px #fff;
+        }
+
+        50% {
+            text-shadow: 0 0 20px #fff;
+        }
+
+        100% {
+            text-shadow: 0 0 10px #fff;
+        }
+
+    }
+
+    .nav-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+
+        .nav-item {
+            transition: all .15s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+                font-weight: bolder;
+            }
+        }
+
+
+        .dropdown-menu {
+            position: relative;
+
+            &:hover {
+                .dropdown-content {
+                    opacity: 1;
+                    z-index: 1;
+                }
+            }
+
+            a {
+                &:hover {
+                    font-weight: bolder;
+                }
+            }
+
+            .dropdown-content {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                background-color: #28282B;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity .15s ease-in-out;
+                transform: translateX(-50%);
+
+                a {
+                    padding: 1rem 2rem;
+                }
+            }
+        }
+    }
+}

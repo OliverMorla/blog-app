@@ -1,0 +1,52 @@
+.container {
+    margin: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .blog-header-w {
+        .user-photo {
+            width: 50px;
+        }
+
+        .blog-info-w {
+            display: flex;
+            justify-content: space-between;
+
+            .date {}
+
+            .category {
+                border: 1px solid grey;
+                padding: .4rem;
+            }
+
+            .manage-btn-w {
+                display: flex;
+                gap: 1rem;
+
+                .delete-btn {
+                    cursor: pointer;
+                    width: 25px;
+                }
+
+                .edit-btn {
+                    cursor: pointer;
+                    width: 25px;
+                }
+            }
+        }
+    }
+
+    .blog-content-w {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .blog-title {}
+
+        p {
+            line-height: 2rem;
+            text-align: justify;
+        }
+    }
+}
