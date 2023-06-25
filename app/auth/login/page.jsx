@@ -6,11 +6,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "./page.scss"
 
-export const metadata = {
-    title: 'Blog App - Login',
-    description: 'Blog Application',
-}
-
 const Login = () => {
     const router = useRouter();
 

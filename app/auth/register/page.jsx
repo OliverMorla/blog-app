@@ -6,11 +6,6 @@ import { useGlobal } from "@/app/context/GlobalContext";
 import { useState, useEffect } from "react";
 import "./page.scss"
 
-export const metadata = {
-    title: 'Blog App - Create An Account',
-    description: 'Blog Application',
-}
-
 const Register = () => {
     const router = useRouter()
 
