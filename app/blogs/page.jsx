@@ -31,7 +31,7 @@ const Blogs = async () => {
             </div>
             <input type="text" name="search" id="" placeholder="Search Blog" />
             <div className="blogs-item-w">
-                <BlogsCard />
+                {/* <BlogsCard /> */}
             </div>
         </div>
     );

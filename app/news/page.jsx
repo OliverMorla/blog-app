@@ -1,4 +1,4 @@
-import NewsCard from "../components/Cards/News/NewsCard";
+// import NewsCard from "../components/Cards/News/NewsCard";
 import "./page.scss"
 
 export const metadata = {
@@ -11,7 +11,7 @@ const News = () => {
         <div className="news-w">
             <h1 className="heading"> Latest News </h1>
             <div className="news-item-w">
-                <NewsCard />
+                {/* <NewsCard /> */}
             </div>
         </div>
     );
