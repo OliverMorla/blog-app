@@ -6,7 +6,8 @@ async function connectDB() {
         host: process.env.NEXT_SQL_DATABASE_HOSTNAME,
         user: process.env.NEXT_SQL_DATABASE_USERNAME,
         password: process.env.NEXT_SQL_DATABASE_PASSWORD,
-        database: process.env.NEXT_SQL_DATABASE_NAME
+        database: process.env.NEXT_SQL_DATABASE_NAME,
+        port: process.env.NEXT_SQL_DATABASE_PORT
     })
     return connection;
 }

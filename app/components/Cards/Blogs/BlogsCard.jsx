@@ -15,11 +15,8 @@ const getBlogs = async () => {
     return blogs;
 }
 
-
-
 const BlogsCard = async () => {
     const blogs = await getBlogs();
-    console.log(blogs)
     return (
         <>
             {blogs.map((blog, index) => (
