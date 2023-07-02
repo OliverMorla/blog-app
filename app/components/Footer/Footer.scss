@@ -68,16 +68,21 @@
                 address {
                     font-size: 12px;
                     transition: all 0.1s ease-in-out;
-
-                    &:hover {
-                        font-weight: bolder
-                    }
                 }
 
             }
         }
 
         .newsletter-w {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            fieldset{
+                display: flex;
+                flex-direction: column;
+            }
+
             .heading {}
 
             form {
@@ -85,7 +90,7 @@
                 align-items: center;
                 gap: 10px;
 
-                input[type=text] {
+                input[type=email] {
                     padding: 1rem;
                 }
 

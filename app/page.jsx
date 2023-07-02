@@ -19,7 +19,11 @@ const Home = () => {
             loop: true,
           }}
         />
-        <img src="/books.png" alt="books.png" className="books-banner" />
+        <img
+          src="./assets/logos/books.png"
+          alt="books-image"
+          className="books-image"
+        />
       </div>
     </motion.main>
   );

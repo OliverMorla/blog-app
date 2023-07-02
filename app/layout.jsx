@@ -1,24 +1,27 @@
-import { GlobalProvider } from './context/GlobalContext'
-import { Montserrat } from "next/font/google"
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import './globals.css'
+import { GlobalProvider } from "./context/GlobalContext";
+import { Open_Sans } from "next/font/google";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import "./globals.css";
 
-const MontserratFont = Montserrat({
-  subsets: ['latin'],
-  style: 'normal',
-  weight: '400'
-})
+const OpenSans = Open_Sans({
+  preload: true,
+  style: "normal",
+  subsets: ["latin-ext"],
+  weight: ["300", "400", "600", "800"],
+});
 
 export const metadata = {
-  title: `Blog App - Home`,
-  description: 'Blog Application',
-}
+  title: "Blog App - Home",
+  description: "Just a simple blog app where you can read, write, learn and discover new things.",
+  keywords: ["Blog", "Write", "Read", "Learn", "Discover", "Inspire"],
+  author: "Oliver Morla",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={MontserratFont.className}>
+      <body className={OpenSans.className}>
         <GlobalProvider>
           <Header />
           {children}
@@ -26,5 +29,5 @@ export default function RootLayout({ children }) {
         </GlobalProvider>
       </body>
     </html>
-  )
+  );
 }

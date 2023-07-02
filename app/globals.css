@@ -1,9 +1,16 @@
-:root {}
+:root {
+  --primary: #282828;
+  --secondary:  #2D2C31;
+  --tertiary:  #313137;
+  --quaternary:  #363337;
+  --quinary: #0B0B0B;
+  --senary: #F5F5F5;
+}
 
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html,

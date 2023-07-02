@@ -146,7 +146,7 @@ export function GlobalProvider({ children }) {
     }
 
     useEffect(() => {
-        setCurrentUser(JSON.parse(localStorage.getItem("user")))
+        // setCurrentUser(JSON.parse(localStorage.getItem("user")))
     }, [])
 
     const value = {

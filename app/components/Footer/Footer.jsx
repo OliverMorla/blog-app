@@ -6,6 +6,12 @@ import Link from 'next/link';
 import "./Footer.scss"
 
 const Footer = () => {
+
+    async function handleForm(e) {
+        e.preventDefault();
+        alert('Form submitted successfully!');
+    }
+
     return (
         <footer className="footer-w">
             <div className="section-one">
@@ -36,26 +42,48 @@ const Footer = () => {
                     <div className="social-icon-w">
                         <h3 className="heading">Contact Us</h3>
                         <div className="icon-w">
-                            <FontAwesomeIcon icon={faFacebook} className='icon' />
-                            <FontAwesomeIcon icon={faTwitter} className='icon' />
-                            <FontAwesomeIcon icon={faInstagram} className='icon' />
-                            <FontAwesomeIcon icon={faLinkedin} className='icon' />
+                            <Link href={"/"}>
+                                <FontAwesomeIcon icon={faFacebook} className='icon' />
+                            </Link>
+                            <Link href={"/"}>
+                                <FontAwesomeIcon icon={faTwitter} className='icon' />
+                            </Link>
+                            <Link href={"/"}>
+                                <FontAwesomeIcon icon={faInstagram} className='icon' />
+                            </Link>
+                            <Link href={"/"}>
+                                <FontAwesomeIcon icon={faLinkedin} className='icon' />
+                            </Link>
                         </div>
                     </div>
                     <div className="info-w">
-                        <h3>Contact info:</h3>
+                        <h3>Contact info</h3>
                         <address>
-                            <Link href={''}>myemail@gmailcom</Link>
+                            <p>myemail@gmailcom</p>
                             <p>324-233-2231</p>
                             <p>111-11 111St, NY, NY</p>
                         </address>
                     </div>
                 </div>
                 <div className="newsletter-w">
+                    <fieldset>
+                        <legend> Quick Links </legend>
+                        <Link href={'/'}>Home</Link>
+                        <Link href={'/'}>Blogs</Link>
+                        <Link href={'/'}>News</Link>
+                        <Link href={'/'}>Sign In</Link>
+                    </fieldset>
                     <h3 className="heading">Subscribe to Newsletter</h3>
-                    <form>
-                        <input type="text" name="email" id="email-n" placeholder='Enter Email' className='newsletter-textbox' />
-                        <buthrefn type="submit" className='sub-btn'>Suscribe</buthrefn>
+                    <form onSubmit={handleForm}>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email-n"
+                            placeholder='Enter Email'
+                            className='newsletter-textbox'
+                            required
+                        />
+                        <button type="submit" className='sub-btn'>Suscribe</button>
                     </form>
                 </div>
             </div>

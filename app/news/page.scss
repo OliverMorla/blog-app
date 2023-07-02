@@ -1,17 +1,19 @@
 .news-w {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     flex-grow: 1;
 
     .heading {
-        margin: 2em;
+        margin: 1em 0;
         display: flex;
         justify-content: center;
         position: relative;
         text-align: center;
-        
-        &::after{
+
+        &::after {
             position: absolute;
             bottom: 0;
             width: 200px;
@@ -38,10 +40,11 @@
 
     .news-item-w {
         display: flex;
-        width: 100%;
-        gap: 2rem;
         flex-flow: row wrap;
-        margin: 4rem;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1em 0;
+        width: 100%;
 
         .news-card {
             display: flex;
@@ -50,7 +53,7 @@
             width: 500px;
             box-shadow: 0 0 4px 0 grey;
 
-            .photo {
+            .card-photo {
                 object-fit: cover;
                 height: 300px;
                 width: 300px;
@@ -62,7 +65,7 @@
                 justify-content: space-evenly;
                 height: 100%;
 
-                .date--category {
+                .section {
                     display: flex;
                     font-size: 12px;
 
@@ -78,7 +81,6 @@
                 .read-more-btn {
                     text-decoration: underline;
                 }
-
             }
         }
     }
