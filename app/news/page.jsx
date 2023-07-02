@@ -20,7 +20,6 @@ async function getNews() {
 
 const News = async () => {
     const news = await getNews();
-    console.log(news)
 
     return (
         <div className="news-w">
