@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 async function getNews() {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL_NEWS, {
+    const res = await fetch(process.env.NEXT_PUBLIC_VERCEL_ENV  + "/api/news" , {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

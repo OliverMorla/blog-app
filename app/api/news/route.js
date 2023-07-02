@@ -8,7 +8,7 @@ export async function GET(resquest) {
         return NextResponse.json(res[0])
     } catch (err) {
         return new Response('Connection failed!', { headers: { 'Content-Type': 'text/plain' } })
-    }
+    } 
 }
 
 export async function POST(request) {
