@@ -23,6 +23,7 @@ const getArticle = async () => {
 export async function generateMetadata({ params: { news: id } }) {
   const data = await getArticle();
   const article = data.find((item) => item.id === parseInt(id));
+  
   return {
     title: article?.title,
     description: article?.description,
