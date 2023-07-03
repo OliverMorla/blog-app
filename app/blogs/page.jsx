@@ -1,6 +1,11 @@
 import Link from "next/link";
 import "./page.scss"
 
+export const metadata = {
+    title: "Blog App - Blogs",
+    description: "Blogs Section"
+}
+
 const getCategories = async () => {
   const res = await fetch(process.env.API_URL + "/blogs/categories", {
     method: "GET",

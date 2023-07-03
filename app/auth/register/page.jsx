@@ -8,10 +8,15 @@ import "./page.scss"
 
 const Register = () => {
     const router = useRouter()
-
     const { signUp } = useGlobal()
 
-    const [input, setInput] = useState({ email: " ", password: " ", username: " " })
+    const [error, setError] = useState('')
+
+    const [input, setInput] = useState({
+        email: " ",
+        password: " ",
+        username: " ",
+    })
 
     const handleChange = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value })
@@ -27,27 +32,58 @@ const Register = () => {
 
         try {
             const res = await signUp(input)
-            router.push('/auth/login')
+            if (res.status === 200) {
+                router.push('/auth/login')
+            }
+            setError(res.message)
         } catch (err) {
-            console.log(err.message)
+            console.log(res.message)
         }
-
     }
 
     return (
         <div className="container">
+            {error &&
+                <div className="error-modal">
+                    <h2>
+                        {error}
+                    </h2>
+                </div>
+            }
             <form onSubmit={handleRegister}>
                 <div className="form-group">
                     <label htmlFor="username">Username</label>
-                    <input type="text" name="username" id="name" placeholder="Enter username" required onChange={handleChange} />
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter username"
+                        id="name"
+                        required
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" placeholder="Enter email" id="email" required onChange={handleChange} />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter email"
+                        id="email"
+                        required
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Enter password" minLength={6} required onChange={handleChange} />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter password"
+                        id="password"
+                        minLength={6}
+                        required
+                        onChange={handleChange}
+                    />
                 </div>
                 <button type="submit">Register</button>
             </form>

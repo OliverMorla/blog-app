@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 export const metadata = {
     title: 'Blog App - Auth',
     description: 'Blog Application',

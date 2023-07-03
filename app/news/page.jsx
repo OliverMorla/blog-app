@@ -3,7 +3,7 @@ import "./page.scss";
 
 export const metadata = {
   title: "Blog App - News",
-  description: "Blog Application",
+  description: "News Section",
 };
 
 async function getNews() {

@@ -19,11 +19,9 @@ export function GlobalProvider({ children }) {
             },
             body: JSON.stringify(inputs)
         }
-
         const res = await fetch(process.env.NEXT_PUBLIC_REGISTER_API_URL, POST)
-        const user = await res.json()
 
-        return user;
+        return res.json();
     }
 
     const Login = async (inputs) => {
@@ -38,7 +36,7 @@ export function GlobalProvider({ children }) {
         const res = await fetch(process.env.NEXT_PUBLIC_LOGIN_API_URL, POST)
         const user = await res.json();
 
-        if (user) {
+        if (user != undefined) {
             localStorage.setItem('user', JSON.stringify(user.currentUser));
             setCurrentUser(user.currentUser);
         }

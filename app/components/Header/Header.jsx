@@ -7,20 +7,21 @@ import "./Header.scss"
 
 const Header = () => {
     const { currentUser, logOut } = useGlobal()
+    
     const pathname = usePathname();
-    // const router = useRouter();
+    const router = useRouter();
 
-    // const handleLogOut = async (e) => {
-    //     e.preventDefault()
+    const handleLogOut = async (e) => {
+        e.preventDefault()
 
-    //     try {
-    //         const res = await logOut()
-    //         router.push('/')
-    //     } catch (err) {
-    //         alert('Failed to log out!')
-    //         console.log(err.message);
-    //     }
-    // }
+        try {
+            const res = await logOut()
+            router.push('/')
+        } catch (err) {
+            alert('Failed to log out!')
+            console.log(err.message);
+        }
+    }
 
     return (
         <header className="header-w">

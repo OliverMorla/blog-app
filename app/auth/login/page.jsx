@@ -11,7 +11,10 @@ const Login = () => {
 
     const { currentUser, Login } = useGlobal()
 
-    const [input, setInput] = useState({ email: '', password: '' })
+    const [input, setInput] = useState({
+        email: '',
+        password: ''
+    })
 
     const handleChange = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
@@ -27,12 +30,11 @@ const Login = () => {
 
         try {
             const res = await Login(input);
+            if (res.status === 200) {
+                router.push("/")
+            }
         } catch (error) {
-            console.error(error);
-        }
-
-        if (currentUser) {
-            router.push('/')
+            console.log(error);
         }
     }
 
@@ -41,11 +43,26 @@ const Login = () => {
             <form onSubmit={handleLogin}>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" placeholder="Enter email" id="email" required onChange={handleChange} />
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        placeholder="Enter email"
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Enter password" minLength={6} required onChange={handleChange} />
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Enter password"
+                        minLength={6}
+                        required
+                        onChange={handleChange}
+                    />
                 </div>
                 <button type="submit">Login</button>
             </form>
