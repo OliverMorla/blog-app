@@ -5,7 +5,7 @@ import { db } from "../../route";
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
-export async function POST(request) {
+export async function POST(request, response) {
     const connection = await db;
     
     const { email, username, password } = await request.json()
@@ -27,23 +27,20 @@ export async function POST(request) {
 
         if (doesPasswordMatch) {
             const token = jwt.sign({ id: user?.id }, process.env.NEXT_JWT_SECRET, { expiresIn: '1h' })
+            
+            
             cookies().set('access_token', token, {
                 httpOnly: true,
                 sameSite: "lax",
-                secure: true
+                secure: true,
+
             })
             
-            return NextResponse.json({ currentUser: { id: user?.id, username: user?.username, email: user?.email } }, { status: 200 })
+            return NextResponse.json({ message: "Successfully logged in!", currentUser: { id: user?.id, username: user?.username, email: user?.email }, code: 200}, { status: 200 })
         }
 
         return NextResponse.json({ message: 'Username or password is wrong' }, { status: 401 })
 
-
-        // return NextResponse.json({
-        //     message: 'User does exist',
-        //     code: 200,
-        //     user: rows[0]
-        // }, { status: 200 })
     } catch (err) {
 
         console.error(err); // log the error for debugging purposes

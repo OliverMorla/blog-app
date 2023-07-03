@@ -10,10 +10,10 @@ const Blogs = async ({ searchParams: { query } }) => {
         },
     }
 
-    const res = await fetch(process.env.NEXT_PUBLIC_BLOG_CATEGORIES_URL, GET)
+    const res = await fetch(process.env.NEXT_PUBLIC_BLOG_CATEGO_URL, GET)
     const categories = await res.json()
 
-    const filtedBlogs = await fetch(process.env.NEXT_PUBLIC_BLOG_CATEGORIES_URL + `/search?query=${query}`, GET)
+    const filtedBlogs = await fetch(process.env.NEXT_PUBLIC_BLOG_CATEGO_URL + `/search?query=${query}`, GET)
     const blogs = await filtedBlogs.json()
 
     return (

@@ -37,7 +37,7 @@ const Register = () => {
             }
             setError(res.message)
         } catch (err) {
-            console.log(res.message)
+            // console.log(res.message)
         }
     }
 

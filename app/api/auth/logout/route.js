@@ -1,8 +1,7 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
-export async function GET(request) {
-    cookies().delete("access_token")
-    
-    return NextResponse.json({ message: "You have successfully logged out!" }, { status: 200});
+export async function GET(res, req) {
+    cookies().delete("access_token",{sameSite: "none", secure: true})
+    return NextResponse.json({ message: "You have successfully logged out!" , code: 200}, { status: 200});
 }
