@@ -5,7 +5,7 @@ import "./page.scss";
 import { notFound } from "next/navigation";
 
 const getArticle = async () => {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL_NEWS, {
+  const res = await fetch(process.env.API_URL + "/news", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

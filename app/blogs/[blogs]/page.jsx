@@ -12,7 +12,7 @@ const Blog = async ({ params: { blogs: id } }) => {
         }
     }
 
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL_BLOGS, GET)
+    const res = await fetch(process.env.API_URL + "/blogs", GET)
     const data = await res.json()
     const post = data.find(item => item.id === parseInt(id))
 
