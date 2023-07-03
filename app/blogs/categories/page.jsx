@@ -39,7 +39,7 @@ const Blogs = async ({ searchParams: { query } }) => {
                             <h1>{item?.title}</h1>
                             <div className="date">{item?.date}</div>
                             <div className="category">{item?.category}</div>
-                            <p className="info">{item?.desc}</p>
+                            <p className="info">{item?.description}</p>
                             <Link href={`/blogs/${item?.id}`} className="read-more-btn">Read More</Link>
                         </div>
                     ))}
