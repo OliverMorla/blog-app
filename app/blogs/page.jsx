@@ -9,6 +9,7 @@ export const metadata = {
 const getCategories = async () => {
   const res = await fetch(process.env.API_URL + "/blogs/categories", {
     method: "GET",
+    cache: "force-cache",
   });
   return res.json();
 };
@@ -16,6 +17,7 @@ const getCategories = async () => {
 const getBlogs = async () => {
   const res = await fetch(process.env.API_URL + "/blogs", {
     method: "GET",
+    cache: "force-cache",
   });
   return res.json();
 };
