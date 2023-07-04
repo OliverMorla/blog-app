@@ -9,13 +9,13 @@ export const metadata = {
 async function getNews() {
   const res = await fetch(process.env.API_URL + "/news", {
     method: "GET",
-    cache: "no-store",
+    cache: "force-cache",
   });
   return res.json();
 }
 
 const News = async () => {
-  const news = await getNews();
+  const news = await getNews(); 
 
   return (
     <div className="news-w">

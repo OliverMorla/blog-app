@@ -1,24 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faUserPen } from "@fortawesome/free-solid-svg-icons";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import "./page.scss";
-import { notFound } from "next/navigation";
-
-const getArticle = async () => {
-  const res = await fetch(process.env.API_URL + "/news", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    return notFound();
-  }
-
-  return res.json();
-}
 
 export async function generateMetadata({ params: { news: id } }) {
   const data = await getArticle();
@@ -28,6 +12,14 @@ export async function generateMetadata({ params: { news: id } }) {
     title: article?.title,
     description: article?.description,
   }
+}
+
+const getArticle = async () => {
+  const res = await fetch(process.env.API_URL + "/news", {
+    method: "GET",
+    cache: "force-cache",
+  });
+  return res.json();
 }
 
 const newsArticle = async ({ params: { news: id } }) => {

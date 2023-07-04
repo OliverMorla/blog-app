@@ -50,8 +50,8 @@ const Create = () => {
     useEffect(() => {
         if (quill) {
             quill.on('text-change', (delta, oldDelta, source) => {
-                setInput(prevInput => ({...prevInput, description: quill.root.innerHTML}))
-                console.log(quill.root.innerHTML) // quill.root.innerHTML has the HTML of the editor
+                setInput(prevInput => ({...prevInput, description: quill.root.textContent}))
+                console.log(quill.root.textContent) // quill.root.innerHTML has the HTML of the editor
             });
         }
     }, [quill]);

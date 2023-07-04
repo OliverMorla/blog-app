@@ -9,7 +9,6 @@ export const metadata = {
 const getCategories = async () => {
   const res = await fetch(process.env.API_URL + "/blogs/categories", {
     method: "GET",
-    cache: "no-store",
   });
   return res.json();
 };
@@ -17,7 +16,6 @@ const getCategories = async () => {
 const getBlogs = async () => {
   const res = await fetch(process.env.API_URL + "/blogs", {
     method: "GET",
-    cache: "no-store",
   });
   return res.json();
 };
@@ -31,10 +29,10 @@ const Blogs = async () => {
             <div className="heading-w">
                 <h1> Blog <sub> App </sub> </h1>
                 <div className="categories-w">
-                    {categories.map((item, index) => (
+                    {categories?.map((item, index) => (
                         <Link href={`/blogs/categories?query=${item?.category}`}>
                             <button className="category-item">
-                                {item?.category} ({item?.count})
+                                {item?.category}({item?.count})
                             </button>
                         </Link>
                     ))}
@@ -45,9 +43,9 @@ const Blogs = async () => {
             </div>
             <input type="text" name="search" id="" placeholder="Search Blog" />
             <div className="blogs-item-w">
-                {blogs.map((blog, index) => (
+                {blogs?.map((blog, index) => (
                     <div className="blog-card" key={blog?.id}>
-                        <h1>{blog?.title}</h1>
+                        <h1>{blog.title}</h1>
                         <div className="date">{blog?.date}</div>
                         <div className="category">{blog?.category}</div>
                         <p className="info">{blog?.description}</p>

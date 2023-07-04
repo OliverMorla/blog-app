@@ -8,14 +8,14 @@ export async function POST(request) {
     const { email, username, password } = await request.json() // get the data from the request
 
     try {
-        const q = "SELECT * FROM users WHERE email = ? OR username = ?" // query to check if the user already exists
+        const q = "SELECT * FROM users WHERE email = ? OR username = ?"
         const [rows] = await connection.query(q, [email, username]);
 
         if (rows.length) {
             return NextResponse.json({ message: 'User already exists!', status: 403 })
         }
     } catch (err) {
-        console.error(err); // log the error for debugging purposes
+        console.error(err);
         return NextResponse.json({ message: 'Connection failed!', status: 500 })
     }
 
