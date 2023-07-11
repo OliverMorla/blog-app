@@ -24,7 +24,7 @@ const Blog = async ({ params: { blogs: id } }) => {
     <div className="container">
       <div className="blog-header-w">
         <img src="/user-icon.png" alt="" className="user-photo" />
-        <h3 className="author">User</h3>
+        <h3 className="author">{blog?.username}</h3>
         <div className="blog-info-w">
           <div className="date">{blog?.date}</div>
           <div className="category">{blog?.category}</div>

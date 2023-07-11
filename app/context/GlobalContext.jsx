@@ -59,9 +59,6 @@ export function GlobalProvider({ children }) {
     const createBlog = async (inputs) => {
         const POST = {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
             body: JSON.stringify(inputs)
         }
 
@@ -144,7 +141,7 @@ export function GlobalProvider({ children }) {
     }
 
     useEffect(() => {
-        // setCurrentUser(JSON.parse(localStorage.getItem("user")))
+        setCurrentUser(JSON.parse(localStorage.getItem("user")))
     }, [])
 
     const value = {

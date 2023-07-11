@@ -7,24 +7,25 @@ export const metadata = {
 }
 
 const getCategories = async () => {
-  const res = await fetch(process.env.API_URL + "/blogs/categories", {
-    method: "GET",
-    cache: "force-cache",
-  });
-  return res.json();
+    const res = await fetch(process.env.API_URL + "/blogs/categories", {
+        method: "GET",
+        cache: "force-cache",
+    });
+    return res.json();
 };
 
 const getBlogs = async () => {
-  const res = await fetch(process.env.API_URL + "/blogs", {
-    method: "GET",
-    cache: "force-cache",
-  });
-  return res.json();
+    const res = await fetch(process.env.API_URL + "/blogs", {
+        method: "GET",
+        cache: "force-cache",
+    });
+    return res.json();
 };
 
 const Blogs = async () => {
     const categories = await getCategories();
     const blogs = await getBlogs();
+    console.log(blogs)
 
     return (
         <div className="blog-w">
@@ -50,6 +51,7 @@ const Blogs = async () => {
                         <h1>{blog.title}</h1>
                         <div className="date">{blog?.date}</div>
                         <div className="category">{blog?.category}</div>
+                        <p className="author">Author: {blog?.username}</p>
                         <p className="info">{blog?.description}</p>
                         <Link href={`/blogs/${blog?.id}`} className="read-more-btn">Read More</Link>
                     </div>
