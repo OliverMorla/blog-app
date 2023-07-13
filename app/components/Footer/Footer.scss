@@ -81,6 +81,11 @@
             fieldset{
                 display: flex;
                 flex-direction: column;
+                font-size: 12px;
+
+                a{
+                    padding: 5px 10px;
+                }
             }
 
             .heading {}
